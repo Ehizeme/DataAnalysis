@@ -1,0 +1,84 @@
+COMPILED LIST OF TIPS AND FUNCTIONS WITH DESCRIPTIONS IN DIFFERENT CATEGORIES.
+
+INSTALLATION/DOWNLOAD INSTRUCTIONS
+http://cran.r-project.org
+
+HELP 
+
+help.start()							General Help
+help(options)							Provides informations about available options
+help("functionName")     				Help on specified function name(Quotation marks are optional)
+?functionName           				Help on specified function name
+help.search("stringToFind")				Searches the help system for instances of the specified string
+??stringToFind							Searches the help system for instances of the specified string
+example("functionName")					Displays example usage of function functionName. 
+RSiteSearch("stringToFind")				Searches for the specified string in online help manuals and archived mailing list
+apropos("fnName", mode="fucntion")		List functins with fnName in their name
+data()									List all example data sets in currently loaded packages
+vignette()								List vignettes for currently installed packeges
+vignette("name")						List specific vignette for topic name
+
+WORKSPACE
+
+gwd()									List present working directory
+setwd("path/to/directory")				Change the current working directory
+q()										Quit R. Ends session and provides option to quit.
+ls()									List objects in current workspace
+rm(objectList)							Removes one or more objects
+options()								View or set current options
+history(num)							Displays your last num of commands
+savehistory("fileName")					Save history to fileName. Default is .Rhistory
+loadhistory("fileName")					Reload command history from fileName. Default is .Rhistory
+save.image("fileName")					Save the workspace to filename. Default is .RData
+save(objectList, file="fileName")		Save object in objectList to a file
+load("fileName")						Load specified workspace into current session
+
+INPUT
+
+source("fileName.R")					Runs fileName. (.R extension is not required)
+
+OUTPUT
+
+sink("fileName")						Redirects output to fileName. Overwrites by default
+										Options:
+											append = TRUE - Append to file instead of overwrite
+											split  = TRUE - Send output to file and to screen
+											sink()        - Send output to screen alone
+
+GRAPHICS
+
+dev.off()								Return output to screen
+plot(vector1, vector2)					Plot a graph of vector1 against vector2
+bmp("fileName.bmp")						Save graphic output as fileName.bmp
+jpeg("fileName.jpg")					Save graphic output as fileName.jpg
+pdf("fileName.pdf")						Save graphic output as fileName.pdf
+png("fileName.png")						Save graphic output as fileName.png
+postscript("fileName.ps")				Save graphic output as fileName.ps
+svg("fileName.svg")						Save graphic output as fileName.svg
+win.metafile("fileName.wmf")			Save graphic output as fileName.wmf(Windows metafile)
+
+
+
+STATISTICS
+
+mean(vectorName)						Calculate the mean of values in vectorName
+sd(vectorName)							Calculate the standard deviation of values in vectorName
+cor(vector1, vector2)					Calculate the correlation between vector1 and vector2
+
+
+FUNCTIONS
+
+c()										Combines arguments into vector or list. E.g vectorExample <- c(1.2, 3.2, 4.5)
+
+
+GENERAL SYNTAX
+
+Line comments: #
+Assignment: <-							Recommended use.
+Assignment: =							Object Assignment, not standard syntax and wont always work. (Investigate Further)
+Assigbment: ->          				Not very common, equivalent to <-
+
+TIPS
+
+demo()									See a complete list of available demonstations. Usage example - demo(Hershey)
+
