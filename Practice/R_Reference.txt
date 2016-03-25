@@ -85,11 +85,15 @@ STATISTICS
 mean(vectorName)                        Calculate the mean of values in vectorName
 sd(vectorName)                          Calculate the standard deviation of values in vectorName
 cor(vector1, vector2)                   Calculate the correlation between vector1 and vector2
+lm()                                    Fit linear model.options(formula, data, subsets, weight etc) - help(lm)
+predict(fit, newData)                   Predict results from new data using fit
 
 
 FUNCTIONS
 
 c()                                     Combines arguments into vector or list. E.g vectorExample <- c(1.2, 3.2, 4.5)
+summary(results)                        Displays containing information such as predicted values, residuals, regression coeff, pValue etc.
+
 
 
 
@@ -105,4 +109,35 @@ Assigbment: ->                          Not very common, equivalent to <-
 TIPS
 
 demo()                                  See a complete list of available demonstations. Usage example - demo(Hershey)
+
+
+NOTES
+
+R Data Types and Structures: 
+Scalars: One element vectors.
+
+Vector: One dimensional array for holding numerical data, character data or logical data. Use c() to from vector. Homeogeneous.
+        Example: a <- c(TRUE, FALSE, TRUE, TRUE, FALSE)
+                 a[c(2, 4)] - Refers to the second and fourth elemets of vector a.
+                 a[3] - 3rd element
+                 a[2:6] - Generate a sequence from the vector from the 2nd to the 6th element
+                 a <- c(2:6) = a <- c(2, 3, 4, 5, 6)
+                 
+Matrix: Two dimensional array where elements have the same mode(numeroc, character, or logical). Create with matrix() function.
+        Syntax: matrixName <- matrix(vector, nrow=number, ncol=number, 
+                              byrow=logical_value, 
+                              dimnames=list(char_vector_rownames, char_vector_colnames))
+                where vector is the elements for the matrix
+                      nrow is the number of rows
+                      ncol is the number of columns
+                      byrow is the order in which the matrix should be filled is(TRUE or FALSE) - default is by column
+                      dimnames are optional row and column labels
+                      
+        Example: y <- matrix(1:20, nrow=5, ncol=5)
+        
+Array: Used for homogeneous data with more than 2 dimensions. 
+
+DataFrame:
+
+List:
 
