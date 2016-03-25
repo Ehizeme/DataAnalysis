@@ -87,12 +87,16 @@ sd(vectorName)                          Calculate the standard deviation of valu
 cor(vector1, vector2)                   Calculate the correlation between vector1 and vector2
 lm()                                    Fit linear model.options(formula, data, subsets, weight etc) - help(lm)
 predict(fit, newData)                   Predict results from new data using fit
+summary(results)                        Displays containing information such as predicted values, residuals, regression coeff, pValue etc.
 
 
 FUNCTIONS
 
-c()                                     Combines arguments into vector or list. E.g vectorExample <- c(1.2, 3.2, 4.5)
-summary(results)                        Displays containing information such as predicted values, residuals, regression coeff, pValue etc.
+c()                                     Create vectors. Combines arguments into vector or list. E.g vectorExample <- c(1.2, 3.2, 4.5)
+matrix(vector, nrow=row, ncol=col)      Create matrices. Other options include - byrow=TRUE/FALSE, dimnames=list(vectorRowName, vectorColNames))
+array(vector, dimensions, dimnames)     Create arrays. Dimensions - value of maximum index, dimnames - dimension names.
+data.frame(col1, col2, row.names=coln)  Create data frames. Use column vectors of any types. row.names is used to specify case identifiers.
+table(...)                              Cross classify factors to build a table of the counts at each combination. help(table) for more info.
 
 
 
@@ -100,20 +104,36 @@ summary(results)                        Displays containing information such as 
 GENERAL SYNTAX
 
 Line comments: #
+
 Assignment: <-                          Recommended use.
 Assignment: =                           Object Assignment, not standard syntax and wont always work. (Investigate Further)
 Assigbment: ->                          Not very common, equivalent to <-
 
+Assigments: <<-                         Sace objects to the globel environment.
+
+dataFrameName$columnName                Use $ to get elements from columnName in dataFrameName.
 
 
 TIPS
 
-demo()                                  See a complete list of available demonstations. Usage example - demo(Hershey)
+demo()                                  See a complete list of available demonstations. Usage - demo(demoExampleName) : example - demo(Hershey)
+
+It is best to use attach() and detach() when working with a single data frame.
+attach(dataFrameName)                   Can be used to simplify code by adding the data frame to the R search path. Take care when different objects have same name. Original object takes precedence.
+detach(dataFrameName)                   Remove data frame from the R search path. Optional but good practice
+with(dataFrameName, {})                 Statements within {} are evaluted with reference to the dataFrame. {} are optional. Assignments only exist within {}. Use <<- to create objects that exists outside.               
 
 
 NOTES
 
 R Data Types and Structures: 
+
+Modes (Data types):     logical - TRUE/FALSE
+                        complex - imaginary numbers
+                        raw     - bytes
+                        numerical
+                        character
+                        
 Scalars: One element vectors.
 
 Vector: One dimensional array for holding numerical data, character data or logical data. Use c() to from vector. Homeogeneous.
@@ -135,9 +155,17 @@ Matrix: Two dimensional array where elements have the same mode(numeroc, charact
                       
         Example: y <- matrix(1:20, nrow=5, ncol=5)
         
-Array: Used for homogeneous data with more than 2 dimensions. 
+Array:  Used for homogeneous data with more than 2 dimensions. 
+        Example: myarray <- array(vector, dimensions, dimnames)
 
-DataFrame:
+DataFrame:  Data frames are general data structures that can contain different the different modes of data.
+            This is the most common type of data structure used in R. 
+            Syntax: data.frame(col1, col2, col3)
+            where col1, col2, col3 are vectors of any type.
+            
+            Subscript notation or column names can be used to identify elements of a data frame.
+            
+            attach
 
 List:
 
