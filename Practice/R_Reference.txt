@@ -13,7 +13,7 @@ help.search("stringToFind")             Searches the help system for instances o
 ??stringToFind                          Searches the help system for instances of the specified string
 example("functionName")                 Displays example usage of function functionName. 
 RSiteSearch("stringToFind")             Searches for the specified string in online help manuals and archived mailing list
-apropos("fnName", mode="fucntion")      List functins with fnName in their name
+apropos("fnName", mode="fucntion")      List functions with fnName in their name
 data()                                  List all example data sets in currently loaded packages
 vignette()                              List vignettes for currently installed packeges
 vignette("name")                        List specific vignette for topic name
