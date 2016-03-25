@@ -21,4 +21,9 @@ Using R for Data Analysis and Graphics
     Arrays.R
       Create arrays and practice accessing array elements. 
     
+    DataFrames.R
+      Create data frames and access elements of data frames.
+      Specify case identifiers
+      Use attach(), detach() and with()
+      Use <<- for saving objects to the global environment.
   
